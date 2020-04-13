@@ -9,11 +9,30 @@ Tired to manually generate curl from nodejs request for debugging proposes? Need
 
 ## Installation ⚙️
 
+> ⚠️ Note that this is a forked version of [drgx/http-to-curl](https://github.com/drgx/http-to-curl) and will be merged to the original repo soon.  Until then, this is how you would install this version.
+
 ```sh
 yarn add http-to-curl
 # old way
 npm install http-to-curl --save
 ```
+
+Modify the `package.json` file by adding/modifying these lines:
+
+```json
+{
+  ...
+  "scripts": {
+    ...
+    "postinstall": "cd ./node_modules/http-to-curl && yarn install && yarn build"
+  },
+  "dependencies": {
+    "http-to-curl": "https://github.com/senglin/http-to-curl",
+    ...
+  }
+}
+```
+Replace `yarn build` with `npm run build` if you are using `npm`.
 
 ## Usage 📚
 
